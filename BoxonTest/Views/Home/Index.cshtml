@@ -1,0 +1,110 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h3>Assessment Task</h3>
+    <p>Software Developer </p>
+</div>
+
+
+<div class="form-check">
+    <input type="radio" class="form-check-input" id="englishOnly" name="optradio" value="englishOnly" checked>
+    <label class="form-check-label" for="englishOnly">English Only</label>
+</div>
+<div class="form-check">
+    <input type="radio" class="form-check-input" id="englishAndArabic" name="optradio" value="englishAndArabic">
+    <label class="form-check-label" for="englishAndArabic">English And Arabic</label>
+</div>
+<form action="/Home/Index">
+    <input type="submit" id="btnSubmitForm" class="btn btn-success btn-lg pull-right" style="margin-top: -25px;">
+        
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#tabEnglish">English</a></li>
+        <li><a data-toggle="tab" href="#tabArabic">Arabic</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="tabEnglish" class="tab-pane fade in active">
+
+            <div class="container form-inline top-space" id="englishArea">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="panel panel-default" id="defaultEngArea">
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <div class="col-xs-3">
+                                    <label for="name">Name:</label>
+                                </div>
+                                <div class="col-xs-9">
+                                    <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-3">
+                                    <label for="email">Email:</label>
+                                </div>
+                                <div class="col-xs-9">
+                                    <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-3">
+                                    <label for="phone">Phone:</label>
+                                </div>
+                                <div class="col-xs-9">
+                                    <input type="number" class="form-control" id="phone" placeholder="Enter Phone" name="phone" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="englishChildArea">
+                    </div>
+                </div>
+            </div>
+            <button id="btnAddBothForm" class="btn btn-secondary" onclick="addElement('');" style="display:block;">Add Forms</button>
+            <button id="btnAddEngForm" class="btn btn-secondary" onclick="addElement('english');" style="display:none;">Add Form</button>
+        </div>
+        <div id="tabArabic" class="tab-pane fade">
+
+            <div class="container form-inline top-space">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body text-right">
+                            <div class="form-group">
+                                <div class="col-xs-9">
+                                    <input type="number" class="form-control" id="phone" placeholder="أدخل الهاتف" name="phone" required>
+                                </div>
+                                <div class="col-xs-3">
+                                    <label for="phone">:هاتف</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-8">
+                                    <input type="email" class="form-control" id="email" placeholder="أدخل البريد الإلكتروني" name="email" required>
+                                </div>
+                                <div class="col-xs-4">
+                                    <label for="email">
+                                        :بريد إلكتروني
+
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-9">
+                                    <input type="text" class="form-control" id="name" placeholder="أدخل الاسم" name="name" required>
+                                </div>
+                                <div class="col-xs-3">
+                                    <label for="name">:اسم</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="arabicChildArea">
+                    </div>
+                </div>
+                <button id="btnAddArbForm" class="btn btn-secondary pull-right" onclick="addElement('arabicOnly');" style="display:none;">Add Form</button>
+            </div>
+
+        </div>
+    </div>
+</form>
